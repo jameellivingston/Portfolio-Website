@@ -1,0 +1,90 @@
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    z-index: 100;
+}
+
+
+.nav-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #434f45;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+        z-index: 90;
+    }
+
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+
+    .nav-link {
+        font-size: 1.25rem;
+    }
+
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+   
+    .glass-container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        padding: 2rem 1.5rem;
+    }
+}
+
+button.nav-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
